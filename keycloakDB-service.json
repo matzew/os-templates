@@ -1,0 +1,27 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "keycloakDB",
+    "creationTimestamp": null,
+    "labels": {
+      "service": "keycloakDB"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "4406",
+        "protocol": "TCP",
+        "port": 4406,
+        "targetPort": 3306
+      }
+    ],
+    "selector": {
+      "service": "keycloakDB"
+    }
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

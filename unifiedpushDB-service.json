@@ -1,0 +1,27 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "unifiedpushDB",
+    "creationTimestamp": null,
+    "labels": {
+      "service": "unifiedpushDB"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "4306",
+        "protocol": "TCP",
+        "port": 4306,
+        "targetPort": 3306
+      }
+    ],
+    "selector": {
+      "service": "unifiedpushDB"
+    }
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

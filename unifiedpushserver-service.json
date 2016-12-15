@@ -1,0 +1,27 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "unifiedpushserver",
+    "creationTimestamp": null,
+    "labels": {
+      "service": "unifiedpushserver"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "8443",
+        "protocol": "TCP",
+        "port": 8443,
+        "targetPort": 8443
+      }
+    ],
+    "selector": {
+      "service": "unifiedpushserver"
+    }
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

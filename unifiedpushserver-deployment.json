@@ -1,0 +1,37 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "unifiedpushserver",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "service": "unifiedpushserver"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "unifiedpushserver",
+            "image": "aerogear/unifiedpush-wildfly-dev",
+            "ports": [
+              {
+                "containerPort": 8443,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {}
+          }
+        ],
+        "restartPolicy": "Always"
+      }
+    },
+    "strategy": {}
+  },
+  "status": {}
+}

@@ -1,0 +1,55 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "unifiedpushDB",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "service": "unifiedpushDB"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "unifiedpushDB",
+            "image": "mysql:5.5",
+            "ports": [
+              {
+                "containerPort": 3306,
+                "protocol": "TCP"
+              }
+            ],
+            "env": [
+              {
+                "name": "MYSQL_USER",
+                "value": "unifiedpush"
+              },
+              {
+                "name": "MYSQL_PASSWORD",
+                "value": "unifiedpush"
+              },
+              {
+                "name": "MYSQL_DATABASE",
+                "value": "unifiedpush"
+              },
+              {
+                "name": "MYSQL_ROOT_PASSWORD",
+                "value": "supersecret"
+              }
+            ],
+            "resources": {}
+          }
+        ],
+        "restartPolicy": "Always"
+      }
+    },
+    "strategy": {}
+  },
+  "status": {}
+}
